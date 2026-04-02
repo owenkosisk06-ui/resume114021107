@@ -7,6 +7,8 @@
 
     <title>Owenkosi Kunene | CV</title>
 
+    <button onclick="toggleMusic()">🎵 Play / Pause Music</button>
+
     <style>
         /* RESET */
         * {
@@ -16,8 +18,26 @@
             font-family: 'Segoe UI', sans-serif;
         }
 
-        body {
+        <audio id="bg-music" autoplay loop><source src="music.mp3" type="audio/mpeg"></audio><script> // Allow music to play after user interaction (browser restriction fix)
+
+        document.addEventListener("click", function() {
+                document.getElementById("bg-music").play();
+            });
+
+        </script>body {
             background: linear-gradient(135deg, #1a73e8, #00c6ff);
+
+            function toggleMusic() {
+                const music=document.getElementById("bg-music");
+
+                if(music.paused) {
+                    music.play();
+                }
+
+                else {
+                    music.pause();
+                }
+            }
         }
 
         /* CONTAINER */
@@ -121,7 +141,7 @@
         }
 
         button:hover {
-            background: #0d47a1;
+            background: #021025ba;
         }
 
         /* RESPONSIVE */
@@ -181,7 +201,7 @@
             <!-- MAIN -->
             <div class="main">
 
-                <button onclick="generateSummary()">✨ Generate AI Summary</button>
+                <button onclick="generateSummary()">✨ click me</button>
 
                 <h2>About Me</h2>
                 <p id="summary">
