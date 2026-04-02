@@ -2,265 +2,414 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Owenkosi Kunene | CV</title>
-
-    <button onclick="toggleMusic()">🎵 Play / Pause Music</button>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owenkosi Sibahle Kunene | Resume</title>
     <style>
-        /* RESET */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
         }
 
-        <audio id="bg-music" autoplay loop><source src="music.mp3" type="audio/mpeg"></audio><script> // Allow music to play after user interaction (browser restriction fix)
-
-        document.addEventListener("click", function() {
-                document.getElementById("bg-music").play();
-            });
-
-        </script>body {
-            background: linear-gradient(135deg, #1a73e8, #00c6ff);
-
-            function toggleMusic() {
-                const music=document.getElementById("bg-music");
-
-                if(music.paused) {
-                    music.play();
-                }
-
-                else {
-                    music.pause();
-                }
-            }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #e9eef3;
+            color: #222;
+            padding: 30px 15px;
         }
 
-        /* CONTAINER */
-        .container {
+        .resume {
             max-width: 1000px;
-            margin: 40px auto;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        /* HEADER */
-        .header {
-            text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #1a73e8, #0d47a1);
-            color: white;
-        }
-
-        .header img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid white;
-            margin-bottom: 10px;
-        }
-
-        .header h1 {
-            font-size: 26px;
-        }
-
-        .header p {
-            opacity: 0.9;
-        }
-
-        /* CONTENT GRID */
-        .content {
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 300px 1fr;
+            background: #ffffff;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+            min-height: 100vh;
         }
 
-        /* SIDEBAR */
         .sidebar {
-            background: #f4f6f8;
-            padding: 25px;
+            background: #145b8e;
+            color: #ffffff;
+            padding: 28px 24px;
         }
 
-        .sidebar h3 {
-            margin-bottom: 10px;
-            color: #1a73e8;
+        .photo-wrap {
+            text-align: center;
+            margin-bottom: 18px;
         }
 
-        .sidebar ul {
-            list-style: none;
-            margin-bottom: 20px;
+        .photo-wrap img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #dce9f4;
         }
 
-        .sidebar li {
-            margin: 8px 0;
-            font-size: 14px;
+        .name {
+            text-align: center;
+            font-size: 31px;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-top: 10px;
         }
 
-        /* MAIN */
-        .main {
-            padding: 25px;
-        }
-
-        .main h2 {
-            color: #1a73e8;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 5px;
-        }
-
-        .main p {
-            margin-bottom: 15px;
+        .role {
+            text-align: center;
+            font-size: 15px;
+            color: #d8ebf7;
+            margin-top: 10px;
             line-height: 1.6;
         }
 
-        /* SKILLS */
-        .skills span {
-            display: inline-block;
-            background: #1a73e8;
-            color: white;
-            padding: 6px 10px;
-            margin: 5px;
-            border-radius: 20px;
-            font-size: 13px;
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.45);
+            margin: 20px auto 22px;
         }
 
-        /* BUTTON */
-        button {
-            background: #1a73e8;
-            color: white;
+        .side-section {
+            margin-bottom: 26px;
+        }
+
+        .side-section h3 {
+            font-size: 17px;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .side-section p,
+        .side-section li,
+        .side-section a {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #edf7ff;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .side-list {
+            list-style: none;
+        }
+
+        .side-list li {
+            margin-bottom: 8px;
+        }
+
+        .main {
+            padding: 30px 34px;
+            background: #ffffff;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 12px;
+        }
+
+        .music-btn {
+            background: #1f78c8;
+            color: #fff;
             border: none;
-            padding: 10px 15px;
-            border-radius: 20px;
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-size: 14px;
             cursor: pointer;
-            margin: 10px 0;
+            box-shadow: 0 6px 14px rgba(31, 120, 200, 0.22);
         }
 
-        button:hover {
-            background: #021025ba;
+        .music-btn:hover {
+            background: #1664aa;
         }
 
-        /* RESPONSIVE */
-        @media(max-width:768px) {
-            .content {
+        .section {
+            margin-bottom: 28px;
+        }
+
+        .section-title {
+            color: #1472bb;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: "✦";
+            font-size: 18px;
+            color: #1472bb;
+        }
+
+        .section-content {
+            font-size: 16px;
+            line-height: 1.85;
+            color: #222;
+            border-top: 1px solid #d9e0e6;
+            padding-top: 12px;
+        }
+
+        .entry {
+            margin-bottom: 18px;
+        }
+
+        .entry h4 {
+            font-size: 18px;
+            margin-bottom: 4px;
+            color: #111;
+        }
+
+        .entry .meta {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .entry ul {
+            padding-left: 18px;
+            line-height: 1.8;
+        }
+
+        .entry ul li {
+            margin-bottom: 4px;
+        }
+
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 6px;
+        }
+
+        .badge {
+            background: #e8f3fb;
+            color: #145b8e;
+            border: 1px solid #c7def0;
+            padding: 8px 12px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .audio-note {
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 850px) {
+            .resume {
                 grid-template-columns: 1fr;
+            }
+
+            .main {
+                padding: 24px 20px;
+            }
+
+            .sidebar {
+                padding: 24px 20px;
+            }
+
+            .name {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
             }
         }
     </style>
 </head>
 
 <body>
+    <div class="resume">
+        <aside class="sidebar">
+            <div class="photo-wrap">
+                <img src="myphoto.jpg" alt="Owenkosi profile photo" />
+            </div>
 
-    <div class="container">
+            <h1 class="name">Owenkosi Sibahle Kunene</h1>
+            <p class="role">
+                Computer Science &amp; Information Engineering Student<br />
+                Asia University
+            </p>
 
-        <!-- HEADER -->
-        <div class="header">
-            <img src="myphoto.jpg">
-            <h1 id="name"></h1>
-            <p>Computer Science & Information Engineering Student</p>
-            <p>Asia University | FinTech & Software Enthusiast</p>
-        </div>
+            <div class="divider"></div>
 
-        <!-- CONTENT -->
-        <div class="content">
+            <div class="side-section">
+                <h3>Details</h3>
+                <p>Taiwan</p>
+                <p>Student ID: 114021107</p>
+                <p>
+                    <a href="mailto:owenkosisk06@gmail.com">owenkosisk06@gmail.com</a>
+                </p>
+                <p>
+                    <a href="https://github.com/owenkosi06" target="_blank">
+                        github.com/owenkosi06
+                    </a>
+                </p>
+            </div>
 
-            <!-- SIDEBAR -->
-            <div class="sidebar">
-
-                <h3>Contact</h3>
-                <ul>
-                    <li>📧 owenkosisk06@gmail.com</li>
-                    <li>💻 github.com/owenkosi06</li>
-                    <li>📍 Taiwan</li>
+            <div class="side-section">
+                <h3>Tools of the Trade</h3>
+                <ul class="side-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Java</li>
+                    <li>Git &amp; GitHub</li>
+                    <li>Responsive Web Design</li>
                 </ul>
+            </div>
 
-                <h3>Skills</h3>
-                <div class="skills">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                    <span>Java</span>
-                    <span>Git</span>
-                    <span>FinTech Basics</span>
-                </div>
+            <div class="side-section">
+                <h3>Languages</h3>
+                <ul class="side-list">
+                    <li>English</li>
+                    <li>SiSwati</li>
+                    <li>Basic Mandarin</li>
+                </ul>
+            </div>
 
+            <div class="side-section">
                 <h3>Interests</h3>
-                <ul>
+                <ul class="side-list">
                     <li>Artificial Intelligence</li>
                     <li>FinTech Systems</li>
                     <li>Web Development</li>
                     <li>Leadership</li>
                 </ul>
-
             </div>
 
-            <!-- MAIN -->
-            <div class="main">
-
-                <button onclick="generateSummary()">✨ click me</button>
-
-                <h2>About Me</h2>
-                <p id="summary">
-                    I am an international student from Eswatini studying Computer Science and Information Engineering at
-                    Asia University. I am passionate about FinTech, software development, and building innovative
-                    digital systems.
-                </p>
-
-                <h2>Education</h2>
-                <p><b>Asia University</b></p>
-                <p>Bachelor of Computer Science & Information Engineering</p>
-                <p>Student ID: 114021107</p>
-
-                <h2>Projects</h2>
-                <p>- Personal Resume Website (GitHub Pages)</p>
-                <p>- Web Applications using HTML, CSS, JavaScript</p>
-
-                <h2>Career Goal</h2>
+            <div class="side-section">
+                <h3>Hobbies</h3>
                 <p>
-                    To become a software engineer specializing in FinTech systems, contributing to digital innovation
-                    and global financial technologies.
+                    Learning about technology, improving my programming skills, and
+                    building creative digital projects.
                 </p>
+            </div>
+        </aside>
 
+        <main class="main">
+            <div class="top-bar">
+                <button class="music-btn" onclick="toggleMusic()">🎵 Play / Pause Music</button>
             </div>
 
-        </div>
+            <section class="section">
+                <h2 class="section-title">Profile</h2>
+                <div class="section-content">
+                    I am an international student from Eswatini studying Computer Science
+                    and Information Engineering at Asia University. I am passionate about
+                    software development, FinTech, and building innovative digital
+                    systems. I enjoy learning new technologies, solving problems, and
+                    growing step by step into a skilled tech professional.
+                </div>
+            </section>
 
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="section-content">
+                    <div class="entry">
+                        <h4>Asia University</h4>
+                        <div class="meta">
+                            Bachelor of Computer Science &amp; Information Engineering
+                        </div>
+                        <p>Student ID: 114021107</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Projects</h2>
+                <div class="section-content">
+                    <div class="entry">
+                        <h4>Personal Resume Website</h4>
+                        <div class="meta">HTML, CSS, JavaScript, GitHub Pages</div>
+                        <ul>
+                            <li>Built and published a personal resume website on GitHub Pages.</li>
+                            <li>Added a profile photo, responsive layout, and background music.</li>
+                            <li>Improved the design using modern CV-style structure.</li>
+                        </ul>
+                    </div>
+
+                    <div class="entry">
+                        <h4>Web Development Practice</h4>
+                        <div class="meta">Front-end learning projects</div>
+                        <ul>
+                            <li>Created web pages using HTML, CSS, and JavaScript.</li>
+                            <li>Practiced clean layouts, styling, and basic interactivity.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="section-content">
+                    <div class="badge-group">
+                        <span class="badge">HTML</span>
+                        <span class="badge">CSS</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">Java</span>
+                        <span class="badge">Git</span>
+                        <span class="badge">GitHub</span>
+                        <span class="badge">Responsive Design</span>
+                        <span class="badge">FinTech Basics</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Career Goal</h2>
+                <div class="section-content">
+                    My goal is to become a software engineer who contributes to innovative
+                    digital solutions, especially in areas such as financial technology,
+                    intelligent systems, and modern web development.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Most Proud Of</h2>
+                <div class="section-content">
+                    I am proud of studying abroad as an international student and
+                    continuing to build my skills in technology. Each project I complete
+                    helps me grow more confident in my future career.
+                </div>
+            </section>
+
+            <p class="audio-note">
+                If the music does not start automatically, click the music button once.
+            </p>
+        </main>
     </div>
 
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg" />
+    </audio>
+
     <script>
+        const music = document.getElementById("bg-music");
 
-        // typing effect
-        const text = "Owenkosi Sibahle Kunene";
-        let i = 0;
-
-        function typing() {
-            if (i < text.length) {
-                document.getElementById("name").innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, 70);
+        function toggleMusic() {
+            if (music.paused) {
+                music.play().catch(() => { });
+            } else {
+                music.pause();
             }
         }
-        typing();
 
-        // AI summary
-        function generateSummary() {
-            const summaries = [
-                "A passionate FinTech-focused Computer Science student building modern digital solutions.",
-                "Aspiring software engineer with strong interest in financial technology and innovation.",
-                "Motivated developer exploring AI, FinTech, and scalable systems.",
-                "Future tech leader focused on solving real-world financial problems using technology."
-            ];
-
-            document.getElementById("summary").innerHTML =
-                summaries[Math.floor(Math.random() * summaries.length)];
-        }
-
+        document.addEventListener(
+            "click",
+            function () {
+                music.play().catch(() => { });
+            },
+            { once: true }
+        );
     </script>
-
 </body>
 
 </html>
