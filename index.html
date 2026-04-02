@@ -119,6 +119,7 @@
             font-size: 14px;
             cursor: pointer;
             box-shadow: 0 6px 14px rgba(31, 120, 200, 0.22);
+            transition: background 0.3s ease;
         }
 
         .music-btn:hover {
@@ -296,7 +297,7 @@
 
         <main class="main">
             <div class="top-bar">
-                <button class="music-btn" onclick="toggleMusic()">🎵 Play / Pause Music</button>
+                <button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
             </div>
 
             <section class="section">
@@ -393,19 +394,30 @@
 
     <script>
         const music = document.getElementById("bg-music");
+        const musicBtn = document.querySelector(".music-btn");
 
         function toggleMusic() {
             if (music.paused) {
-                music.play().catch(() => { });
+                music.play().then(() => {
+                    musicBtn.innerHTML = "⏸ Pause Music";
+                }).catch((err) => { 
+                    console.log("Playback blocked:", err);
+                });
             } else {
                 music.pause();
+                musicBtn.innerHTML = "🎵 Play Music";
             }
         }
 
+        // Attempt to play on the first click anywhere on the document
         document.addEventListener(
             "click",
             function () {
-                music.play().catch(() => { });
+                if (music.paused) {
+                    music.play().then(() => {
+                        musicBtn.innerHTML = "⏸ Pause Music";
+                    }).catch(() => { });
+                }
             },
             { once: true }
         );
